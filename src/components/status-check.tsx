@@ -1,14 +1,14 @@
 import React from 'react';
 import useSWR from 'swr';
-import { Box, Flex, space, color, BoxProps } from '@blockstack/ui';
+import { Box, Flex, space, color, BoxProps } from '@stacks/ui';
 import { border, transition } from '@common/utils';
 import { Link } from '@components/mdx';
 import { LinkProps, Text } from '@components/typography';
-import { Spinner } from '@blockstack/ui';
+import { Spinner } from '@stacks/ui';
 import { CircleCheck } from '@components/icons/circle-check';
 import { AlertCircleIcon } from '@components/icons/alert-circle';
 import { STATUS_CHECKER_URL } from '@common/constants';
-import { css } from '@styled-system/css';
+import { css } from '@stacks/ui-core';
 import { getCapsizeStyles } from '@components/mdx/typography';
 
 const fetcher = url => fetch(url).then(r => r.json());

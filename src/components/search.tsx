@@ -10,14 +10,14 @@ import {
   BoxProps,
   Grid,
   Stack,
-} from '@blockstack/ui';
+} from '@stacks/ui';
 import { useDocSearchKeyboardEvents } from '@docsearch/react';
 import { Text } from '@components/typography';
 import { SearchIcon } from '@components/icons/search';
 import Router from 'next/router';
 import Link from 'next/link';
 import { getCapsizeStyles } from '@components/mdx/typography';
-import { css } from '@styled-system/css';
+import { css } from '@stacks/ui-core';
 import { border } from '@common/utils';
 
 const getLocalUrl = href => {

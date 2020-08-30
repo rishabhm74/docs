@@ -1,12 +1,12 @@
 import React from 'react';
-import { Box, Grid, color, space, BoxProps } from '@blockstack/ui';
+import { Box, Grid, color, space, BoxProps } from '@stacks/ui';
 import { slugify } from '@common/utils';
 import { Text } from '@components/typography';
 import { Link } from '@components/mdx';
 import { useActiveHeading } from '@common/hooks/use-active-heading';
 import NextLink from 'next/link';
 import { getHeadingStyles } from '@components/mdx/typography';
-import { css } from '@styled-system/css';
+import { css } from '@stacks/ui-core';
 
 const getLevelPadding = (level: number) => {
   switch (level) {

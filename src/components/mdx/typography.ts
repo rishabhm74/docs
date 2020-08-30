@@ -14,12 +14,22 @@ export const baseTypeStyles = {
   fontFamily: `'Soehne', Inter, sans-serif`,
 };
 
-export const getCapsizeStyles = (fontSize, leading) =>
-  capsize({
+export const getCapsizeStyles = (fontSize, leading) => {
+  const styles = capsize({
     fontMetrics,
     fontSize,
     leading,
   });
+
+  Object.keys(styles).forEach(prop => {
+    if (prop.startsWith('::')) {
+      styles[prop.replace('::', ':')] = styles[prop];
+      delete styles[prop];
+    }
+  });
+
+  return styles;
+};
 
 const h1 = {
   fontWeight: 600,

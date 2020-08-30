@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Flex, BoxProps, transition, space, themeColor, color } from '@blockstack/ui';
+import { Box, Grid, Flex, BoxProps, transition, space, themeColor, color } from '@stacks/ui';
 import { GridProps } from '@blockstack/ui/dist/ui/src/grid/types';
 import { CONTENT_MAX_WIDTH } from '@common/constants';
 

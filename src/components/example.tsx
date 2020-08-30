@@ -10,7 +10,7 @@ import {
   ChevronIcon,
   themeColor,
   FlexProps,
-} from '@blockstack/ui';
+} from '@stacks/ui';
 import { Caption, Text } from '@components/typography';
 
 import { border } from '@common/utils';

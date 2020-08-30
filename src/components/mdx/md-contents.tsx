@@ -1,8 +1,7 @@
 import React from 'react';
-import { Box, space, themeColor, color } from '@blockstack/ui';
+import { Box, space, themeColor, color } from '@stacks/ui';
 import { ContentWrapper } from '../content-wrapper';
 import { TableOfContents } from '@components/toc';
-import { css } from '@styled-system/css';
 import { TOC_WIDTH } from '@common/constants';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
@@ -251,9 +250,9 @@ export const MDContents: React.FC<any> = ({ pageTop: PageTop = null, headings, c
     <>
       <ContentWrapper
         width={['100%', '100%', '100%', `calc(100% - ${isHome ? 0 : TOC_WIDTH}px)`]}
-        mx="unset"
-        pt="unset"
-        css={css(styleOverwrites as any)}
+        mx="0"
+        pt="0"
+        css={styleOverwrites as any}
         pr={!isHome && ['0', '0', '0', 'extra-loose']}
       >
         {PageTop && <PageTop />}

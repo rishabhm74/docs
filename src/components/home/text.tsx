@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box, BoxProps, color } from '@blockstack/ui';
+import { Box, BoxProps, color } from '@stacks/ui';
 import { Text } from '@components/typography';
-import { css } from '@styled-system/css';
+import { css } from '@stacks/ui-core';
 
 export const H1: React.FC<BoxProps> = ({ children, ...rest }) => (
   <Box {...rest}>

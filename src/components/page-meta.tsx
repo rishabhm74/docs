@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, Flex, space, Stack, BoxProps, color, StackProps } from '@blockstack/ui';
+import { Box, Flex, space, Stack, BoxProps, color, StackProps } from '@stacks/ui';
 
 import { Text } from '@components/typography';
 
 import { ToolsIcon } from '@components/icons/tools';
 import { ClockIcon } from '@components/icons/clock';
-import { css } from '@styled-system/css';
+import { css } from '@stacks/ui-core';
 import { getCapsizeStyles } from '@components/mdx/typography';
 const Experience: React.FC<
   BoxProps & { level?: 'beginner' | 'intermediate' | 'advanced'; small?: boolean }

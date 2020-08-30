@@ -10,13 +10,13 @@ import {
   ChevronIcon,
   FlexProps,
   Fade,
-} from '@blockstack/ui';
+} from '@stacks/ui';
 import { Link, LinkProps, Text } from '@components/typography';
 import MenuIcon from 'mdi-react/MenuIcon';
 import CloseIcon from 'mdi-react/CloseIcon';
 import { useMobileMenuState } from '@common/hooks/use-mobile-menu';
 
-import { css } from '@styled-system/css';
+import { css } from '@stacks/ui-core';
 import NextLink from 'next/link';
 import { ColorModeButton } from '@components/color-mode-button';
 import { PAGE_WIDTH } from '@common/constants';

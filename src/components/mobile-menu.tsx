@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Box, FlexProps, color, space, CloseIcon, Fade, Transition } from '@blockstack/ui';
+import { Flex, Box, FlexProps, color, space, CloseIcon, Fade, Transition } from '@stacks/ui';
 import { SideNav } from '@components/side-nav';
 import { useLockBodyScroll } from '@common/hooks/use-lock-body-scroll';
 import { useMobileMenuState } from '@common/hooks/use-mobile-menu';

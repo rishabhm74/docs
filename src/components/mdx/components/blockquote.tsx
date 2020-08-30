@@ -1,8 +1,8 @@
-import { Box, Flex, BoxProps, color, themeColor, space } from '@blockstack/ui';
+import { Box, Flex, BoxProps, color, themeColor, space } from '@stacks/ui';
 import React from 'react';
 
 import { border } from '@common/utils';
-import { css } from '@styled-system/css';
+import { css } from '@stacks/ui-core';
 import { CheckCircleIcon } from '@components/icons/check-circle';
 import { AlertTriangleIcon } from '@components/icons/alert-triangle';
 import { AlertCircleIcon } from '@components/icons/alert-circle';

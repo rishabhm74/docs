@@ -1,9 +1,9 @@
 import React from 'react';
-import { Box, space } from '@blockstack/ui';
+import { Box, space } from '@stacks/ui';
 import hydrate from 'next-mdx-remote/hydrate';
 import { Components } from '@components/mdx/mdx-components';
 import { slugify } from '@common/utils';
-import { css } from '@styled-system/css';
+import { css } from '@stacks/ui-core';
 import { TableOfContents } from '@components/toc';
 
 export const Glossary = ({ data }) => {

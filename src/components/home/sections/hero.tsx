@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, space, color } from '@blockstack/ui';
+import { Box, Grid, space, color } from '@stacks/ui';
 import { CircleIcon } from '@components/home/common';
 import { CONTENT_MAX_WIDTH } from '@common/constants';
 import { Card } from '@components/home/card';

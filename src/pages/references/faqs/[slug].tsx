@@ -1,10 +1,10 @@
 import React from 'react';
 import { Components } from '@components/mdx';
-import { Box, Flex, ChevronIcon, space, color, Grid } from '@blockstack/ui';
+import { Box, Flex, ChevronIcon, space, color, Grid } from '@stacks/ui';
 import hydrate from 'next-mdx-remote/hydrate';
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel } from '@reach/accordion';
 import { border } from '@common/utils';
-import { css } from '@styled-system/css';
+import { css } from '@stacks/ui-core';
 import { useRouter } from 'next/router';
 import { useActiveHeading } from '@common/hooks/use-active-heading';
 import { BackButton } from '@components/back-button';

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, space, color, Grid } from '@blockstack/ui';
+import { Box, space, color, Grid } from '@stacks/ui';
 import { Text } from '@components/typography';
 import { slugify } from '@common/utils';
-import { css } from '@styled-system/css';
+import { css } from '@stacks/ui-core';
 import { getCapsizeStyles, getHeadingStyles } from '@components/mdx/typography';
 import { HoverImage } from '../hover-image';
 import { useTouchable } from '@common/hooks/use-touchable';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, BoxProps, useSafeLayoutEffect } from '@blockstack/ui';
+import { Box, BoxProps, useSafeLayoutEffect } from '@stacks/ui';
 import { useSpring, animated, config } from 'react-spring';
 import { useInView } from 'react-intersection-observer';
 import { makeCancelable } from '@common/utils';

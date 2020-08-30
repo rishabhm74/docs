@@ -9,7 +9,7 @@ import {
   Stack,
   transition,
   SlideFade,
-} from '@blockstack/ui';
+} from '@stacks/ui';
 import { Text } from '@components/typography';
 import { Link } from '@components/mdx';
 import { SadIcon, NeutralIcon, HappyIcon } from '@components/icons/feedback';
@@ -17,7 +17,7 @@ import { useTouchable } from '@common/hooks/use-touchable';
 import { border } from '@common/utils';
 import { useRouter } from 'next/router';
 import { getHeadingStyles } from '@components/mdx/typography';
-import { css } from '@styled-system/css';
+import { css } from '@stacks/ui-core';
 import { StatusCheck } from '@components/status-check';
 import { useColorMode } from '@common/hooks/use-color-mode';
 

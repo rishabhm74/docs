@@ -1,9 +1,9 @@
 import React, { Children } from 'react';
 
-import { Box, Flex, BoxProps, color, space, useClipboard, themeColor } from '@blockstack/ui';
+import { Box, Flex, BoxProps, color, space, useClipboard, themeColor } from '@stacks/ui';
 import { ClipboardCheckIcon } from '@components/icons/clipboard-check';
 import { border, onlyText } from '@common/utils';
-import { css } from '@styled-system/css';
+import { css } from '@stacks/ui-core';
 import { Text } from '@components/typography';
 import { useHover } from 'use-events';
 import { IconButton } from '@components/icon-button';

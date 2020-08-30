@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, BoxProps, color, Grid, space } from '@blockstack/ui';
+import { Box, Flex, BoxProps, color, Grid, space } from '@stacks/ui';
 import { BlockstackLogo } from '@components/icons/blockstack-logo';
 import { StackIcon } from '@components/icons/stack';
 import { SitemapIcon } from '@components/icons/sitemap';
@@ -9,7 +9,7 @@ import { Text } from '@components/typography';
 import Link from 'next/link';
 import { useAppState } from '@common/hooks/use-app-state';
 import { Img } from '@components/mdx/image';
-import { css } from '@styled-system/css';
+import { css } from '@stacks/ui-core';
 import { getCapsizeStyles, getHeadingStyles } from '@components/mdx/typography';
 
 const Image = ({
@@ -175,7 +175,7 @@ const GridCardImage: React.FC<
     bg="#9985FF"
     position="relative"
     borderRadius="12px"
-    mb={space('loose')}
+    marginBottom="base"
     overflow="hidden"
     {...props}
   >
@@ -297,7 +297,6 @@ export const PageReference: React.FC<BoxProps> = React.memo(({ children, ...rest
   return (
     <Box {...rest}>
       <Grid
-        display="grid"
         width="100%"
         gridColumnGap={space('extra-loose')}
         gridRowGap={space('extra-loose')}

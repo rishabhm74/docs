@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Box, color, space } from '@blockstack/ui';
+import { Flex, Box, color, space } from '@stacks/ui';
 import ArrowLeftIcon from 'mdi-react/ArrowLeftIcon';
 import { Text } from '@components/typography';
 import Link from 'next/link';

@@ -1,4 +1,4 @@
-import { Box, Flex, FlexProps, BoxProps, color, useClipboard, space } from '@blockstack/ui';
+import { Box, Flex, FlexProps, BoxProps, color, useClipboard, space } from '@stacks/ui';
 
 import React from 'react';
 import LinkIcon from 'mdi-react/LinkVariantIcon';
@@ -7,7 +7,7 @@ import { useTouchable } from '@common/hooks/use-touchable';
 import { Tooltip } from '@components/tooltip';
 import { useActiveHeading } from '@common/hooks/use-active-heading';
 import { Title } from '@components/typography';
-import { css } from '@styled-system/css';
+import { css } from '@stacks/ui-core';
 import { getHeadingStyles, baseTypeStyles } from '@components/mdx/typography';
 import { useRouter } from 'next/router';
 import { Link } from '@components/mdx/components/link';

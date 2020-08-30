@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { Text as BaseText, BoxProps, color } from '@blockstack/ui';
+import { Box, BoxProps, color } from '@stacks/ui';
 import { getCapsizeStyles } from '@components/mdx/typography';
+import { forwardRefWithAs } from '@stacks/ui-core';
 
-export const Text = React.forwardRef((props: BoxProps, ref) => (
-  <BaseText ref={ref} color={color('text-body')} {...getCapsizeStyles(16, 26)} {...props} />
+export const Text = forwardRefWithAs<BoxProps, 'span'>((props, ref) => (
+  <Box as="span" ref={ref} color={color('text-body')} css={getCapsizeStyles(16, 26)} {...props} />
 ));
 
 export const Caption: React.FC<BoxProps> = props => (

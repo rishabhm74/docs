@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, FlexProps, space } from '@blockstack/ui';
+import { Flex, FlexProps, space } from '@stacks/ui';
 
 const ContentWrapper: React.FC<FlexProps> = props => (
   <Flex

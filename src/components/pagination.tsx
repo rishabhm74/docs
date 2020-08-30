@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, BoxProps, Flex, Grid, color, space, transition } from '@blockstack/ui';
+import { Box, BoxProps, Flex, Grid, color, space, transition } from '@stacks/ui';
 import { useAppState } from '@common/hooks/use-app-state';
 import { useRouter } from 'next/router';
 import { border, getTitle } from '@common/utils';
@@ -7,7 +7,7 @@ import NextLink from 'next/link';
 import { Caption, Text, Link } from '@components/typography';
 import { useTouchable } from '@common/hooks/use-touchable';
 import { getHeadingStyles } from '@components/mdx/typography';
-import { css } from '@styled-system/css';
+import { css } from '@stacks/ui-core';
 import { ArrowRightIcon } from '@components/icons/arrow-right';
 import { ArrowLeftIcon } from '@components/icons/arrow-left';
 

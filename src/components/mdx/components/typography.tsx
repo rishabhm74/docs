@@ -1,4 +1,4 @@
-import { Box, BoxProps, color, space } from '@blockstack/ui';
+import { Box, BoxProps, color, space } from '@stacks/ui';
 import React from 'react';
 import { Text } from '@components/typography';
 import { BaseHeading } from '@components/mdx/components/heading';

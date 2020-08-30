@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Box, color, space, BoxProps } from '@blockstack/ui';
+import { Flex, Box, color, space, BoxProps } from '@stacks/ui';
 import Link from 'next/link';
 import { useAppState } from '@common/hooks/use-app-state';
 import { SIDEBAR_WIDTH } from '@common/constants';
@@ -10,9 +10,10 @@ import { getCategory, getTitle, slugify } from '@common/utils';
 import { useRouter } from 'next/router';
 import { getCapsizeStyles } from '@components/mdx/typography';
 import { Text } from '@components/typography';
-import { css } from '@styled-system/css';
+import { css } from '@stacks/ui-core';
 import { SmartLink } from '@components/mdx';
 import { useMobileMenuState } from '@common/hooks/use-mobile-menu';
+import { useTheme } from '@emotion/react';
 
 const Wrapper: React.FC<BoxProps & { containerProps?: BoxProps }> = ({
   width = `${SIDEBAR_WIDTH}px`,
