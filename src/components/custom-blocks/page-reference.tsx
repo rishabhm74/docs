@@ -218,6 +218,7 @@ const GridCard: React.FC<BoxProps & { page?: any }> = React.memo(({ page, ...res
         alt={`Graphic for: ${page.title || page.headings[0]}`}
         src={page?.images?.large}
         isHovered={hover || active}
+        mb={'loose'}
       />
       <GridItemDetails page={page} />
     </Box>
@@ -257,7 +258,7 @@ const GridSmallItem: React.FC<BoxProps & { page?: any }> = ({ page, ...rest }) =
       {...rest}
       {...bind}
     >
-      {page.icon ? <Icon mb={space('base')} /> : null}
+      {page.icon ? <Icon mb={space('loose')} /> : null}
       <GridItemDetails page={page} />
     </Box>
   );

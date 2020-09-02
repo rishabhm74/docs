@@ -5,6 +5,21 @@ import { css, Global } from '@emotion/react';
 const GlobalStyles = (
   <Global
     styles={css`
+      blockquote,
+      dl,
+      dd,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      hr,
+      figure,
+      p,
+      pre {
+        margin: 0px;
+      }
       :root {
         --reach-tooltip: 1;
       }

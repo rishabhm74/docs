@@ -1788,25 +1788,25 @@
   dependencies:
     tslib "^2.0.0"
 
-"@stacks/ui-core@^1.0.0-beta.3":
-  version "1.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@stacks/ui-core/-/ui-core-1.0.0-beta.3.tgz#c1cfafb6b702f769b1fe0fabacd68d577021ee33"
-  integrity sha512-w/m2aP+VUYjNeKX+BTFF/qNDY0U2ti+mLxYApacIkMOHuMh77T3yfwhgf913x2lwqmgcR+4ntcvtavbnftsrrw==
+"@stacks/ui-core@^1.0.0-beta.4":
+  version "1.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@stacks/ui-core/-/ui-core-1.0.0-beta.4.tgz#22f9fa44298e40ca580372e67caad9b882d6bdea"
+  integrity sha512-6eMXjVC4TrYhjjx+A++/mzCduiF9/Q6o4WDZx6eTMtKH63owUctL6iBV3Lm1Lvlle0+9R6+Y6l879FSVn4AjPw==
   dependencies:
     "@styled-system/should-forward-prop" "^5.1.5"
     camelcase "^6.0.0"
     micro-memoize "^4.0.9"
 
-"@stacks/ui@^3.0.0-alpha.8":
-  version "3.0.0-alpha.8"
-  resolved "https://registry.yarnpkg.com/@stacks/ui/-/ui-3.0.0-alpha.8.tgz#bc91d334e18460f75fe29256d4f3ffe8d7ec83ec"
-  integrity sha512-vJwYsrSM4wOm0c7c+lb+tDOKNsSvMMF8b+i4mBJfalzDdN1e83qH7N6Ee3Nbjvtm/hv6fDnxYEjUtKt/tImYzw==
+"@stacks/ui@^3.0.0-alpha.10":
+  version "3.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@stacks/ui/-/ui-3.0.0-alpha.10.tgz#5970d014db603d0ac775a25938fec12af6fbf7af"
+  integrity sha512-JXRAszCWdCGWAt7hyj7MGipG/PLQ9zzBIcSRqu2qk76+PkXC1nobuuhLyyOMQ61XvgJ7C/KXwpl2MhXB5mKBow==
   dependencies:
     "@popperjs/core" "^2.4.0"
     "@reach/alert" "^0.11.2"
     "@reach/auto-id" "^0.11.2"
     "@reach/rect" "^0.11.2"
-    "@stacks/ui-core" "^1.0.0-beta.3"
+    "@stacks/ui-core" "^1.0.0-beta.4"
     "@styled-system/should-forward-prop" "^5.1.5"
     "@styled-system/theme-get" "^5.1.2"
     "@types/flushable" "^1.0.1"
