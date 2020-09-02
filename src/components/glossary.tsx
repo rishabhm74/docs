@@ -23,19 +23,19 @@ export const Glossary = ({ data }) => {
           </Components.h3>
 
           <Box
-            css={css({
-              width: '100%',
-              maxWidth: '48ch',
-              pl: space(['none', 'none', 'base-loose']),
-              '& p': {
-                display: 'block',
-                wordBreak: 'break-word',
-                hyphens: 'auto',
-              },
-              code: {
-                wordBreak: 'break-all',
-              },
-            })}
+            {...{ width: '100%', maxWidth: '48ch', pl: space(['none', 'none', 'base-loose']) }}
+            css={theme =>
+              css({
+                '& p': {
+                  display: 'block',
+                  wordBreak: 'break-word',
+                  hyphens: 'auto',
+                },
+                code: {
+                  wordBreak: 'break-all',
+                },
+              })(theme)
+            }
           >
             {hydrate(entry.definition, Components)}
           </Box>

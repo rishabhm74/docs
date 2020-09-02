@@ -58,12 +58,12 @@ const Key: React.FC<BoxProps> = React.memo(({ children, ...rest }) => (
     {...rest}
   >
     <Text
-      css={css({
+      {...{
         color: color('text-body'),
         display: 'block',
         transform: 'translateY(1px)',
         ...getCapsizeStyles(12, 12),
-      })}
+      }}
     >
       {children}
     </Text>
@@ -167,10 +167,10 @@ export const SearchBox: React.FC<BoxProps> = React.memo(props => {
             </Box>
             <Text
               opacity={0.8}
-              css={css({
+              {...{
                 color: color('text-caption'),
                 ...getCapsizeStyles(14, 28),
-              })}
+              }}
             >
               Search docs
             </Text>

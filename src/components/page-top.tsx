@@ -38,13 +38,7 @@ export const PageTop: React.FC<PageTopProps> = React.memo(
         </Flex>
         {description ? (
           <Box mt="40px !important">
-            <Text
-              css={css({
-                ...getHeadingStyles('h4'),
-              })}
-            >
-              {description}
-            </Text>
+            <Text {...getHeadingStyles('h4')}>{description}</Text>
           </Box>
         ) : null}
         <PageMeta duration={duration} experience={experience} isHome={isHome} />

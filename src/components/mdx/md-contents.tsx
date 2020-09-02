@@ -10,7 +10,8 @@ import { border } from '@common/utils';
 import { getCapsizeStyles } from '@components/mdx/typography';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXComponents } from '@components/mdx';
-export const styleOverwrites = {
+import { css, ThemeUICSSObject } from '@stacks/ui-core';
+export const styleOverwrites: ThemeUICSSObject = {
   '& > section': {
     '&:nth-child(2)': {
       '& > *:first-child, & > section:first-child > *:first-child': {
@@ -74,7 +75,7 @@ export const styleOverwrites = {
   'p, li': {
     overflowWrap: 'break-word',
     display: 'inline-block',
-    ...getCapsizeStyles(16, 26),
+    ...getCapsizeStyles(16, 26, ':'),
   },
   li: {
     '& > p': {
@@ -128,7 +129,7 @@ export const styleOverwrites = {
   h2: {
     mt: '64px',
     '&, & > *': {
-      ...getHeadingStyles('h2'),
+      ...getHeadingStyles('h2', ':'),
     },
     '& > code': {
       px: space('tight'),
@@ -143,7 +144,7 @@ export const styleOverwrites = {
   h3: {
     mt: '64px',
     '&, & > *': {
-      ...getHeadingStyles('h3'),
+      ...getHeadingStyles('h3', ':'),
     },
     '& + section > h4': {
       mt: 0,
@@ -152,7 +153,7 @@ export const styleOverwrites = {
   h4: {
     mt: '64px',
     '&, & > *': {
-      ...getHeadingStyles('h4'),
+      ...getHeadingStyles('h4', ':'),
     },
     '& + section > h5': {
       mt: 0,
@@ -161,19 +162,19 @@ export const styleOverwrites = {
   h5: {
     mt: space('extra-loose'),
     '&, & > *': {
-      ...getHeadingStyles('h5'),
+      ...getHeadingStyles('h5', ':'),
     },
   },
   h6: {
     mt: space('extra-loose'),
     '&, & > *': {
-      ...getHeadingStyles('h6'),
+      ...getHeadingStyles('h6', ':'),
     },
   },
   h1: {
     mt: space('extra-loose'),
     '&, & > *': {
-      ...getHeadingStyles('h1'),
+      ...getHeadingStyles('h1', ':'),
     },
     '& + *': {
       mt: space('extra-loose'),
@@ -252,7 +253,7 @@ export const MDContents: React.FC<any> = ({ pageTop: PageTop = null, headings, c
         width={['100%', '100%', '100%', `calc(100% - ${isHome ? 0 : TOC_WIDTH}px)`]}
         mx="0"
         pt="0"
-        css={styleOverwrites as any}
+        css={theme => css(styleOverwrites)(theme)}
         pr={!isHome && ['0', '0', '0', 'extra-loose']}
       >
         {PageTop && <PageTop />}

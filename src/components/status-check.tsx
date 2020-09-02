@@ -88,10 +88,10 @@ export const StatusCheck: React.FC<LinkProps> = props => {
           )}
         </Box>
         <Text
-          css={css({
+          {...{
             color: 'currentColor',
             ...getCapsizeStyles(14, 24),
-          })}
+          }}
         >
           Stacks 2.0 testnet status
           <StatusWords status={status} />

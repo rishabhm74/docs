@@ -82,9 +82,7 @@ const Pretitle: React.FC<BoxProps> = props => (
     display="block"
     color={color('text-caption')}
     transition={transition}
-    css={css({
-      ...getHeadingStyles('h6'),
-    })}
+    {...getHeadingStyles('h6')}
     {...props}
   />
 );
@@ -97,9 +95,7 @@ const Title: React.FC<BoxProps & { isHovered?: boolean }> = ({ isHovered, ...pro
     transition={transition}
     color={isHovered ? color('accent') : color('text-title')}
     mb={space('tight')}
-    css={css({
-      ...getHeadingStyles('h4'),
-    })}
+    {...getHeadingStyles('h4')}
     {...props}
   />
 );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, BoxProps } from '@stacks/ui';
 import { useRouter } from 'next/router';
+import { ForwardRefExoticComponentWithAs, forwardRefWithAs } from '@stacks/ui-core';
 
 const imgix = 'https://stacks-documentation.imgix.net';
 
@@ -56,30 +57,28 @@ const getAspectRatio = dimensions => {
   return (height / width) * 100;
 };
 
-const BaseImg: React.FC<
-  BoxProps & {
-    src?: string;
-    srcSet?: string;
-    loading?: string;
+const BaseImg: ForwardRefExoticComponentWithAs<BoxProps, 'img'> = forwardRefWithAs<BoxProps, 'img'>(
+  ({ as = 'img', style = {}, ...props }, ref) => {
+    return (
+      <Box
+        maxWidth="100%"
+        width={['100%', '100%', 'inherit', 'inherit']}
+        display="block"
+        as={as}
+        loading="lazy"
+        style={{
+          ...style,
+        }}
+        ref={ref}
+        {...props}
+      />
+    );
   }
-> = ({ style = {}, ...props }) => {
-  return (
-    <Box
-      maxWidth="100%"
-      width={['100%', '100%', 'inherit', 'inherit']}
-      display="block"
-      loading="lazy"
-      as="img"
-      style={{
-        ...style,
-      }}
-      {...props}
-    />
-  );
-};
+);
 
-export const Img: React.FC<
-  BoxProps & { loading?: string; src?: string; alt?: string; dimensions?: any }
+export const Img: ForwardRefExoticComponentWithAs<
+  BoxProps & { loading?: string; dimensions?: any },
+  'img'
 > = React.memo(({ src: _src, dimensions, ...rest }) => {
   const { src, srcset } = useImgix(_src);
 
@@ -99,9 +98,9 @@ export const Img: React.FC<
     return (
       <Box width={width} maxWidth="100%" padding="0 !important" position="relative" className="img">
         <Box height="0" paddingBottom={`${aspectRatio}%`} width="100%" />
-        <BaseImg position="absolute" top={0} left={0} {...props} />
+        <BaseImg position="absolute" top={0} left={0} {...(props as any)} />
       </Box>
     );
   }
-  return <BaseImg className="img" {...props} />;
+  return <BaseImg className="img" {...(props as any)} />;
 });

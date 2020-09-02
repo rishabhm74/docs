@@ -59,23 +59,19 @@ const PageItem = React.forwardRef(
     ref: any
   ) => {
     const typeStyles = isTopLevel ? getCapsizeStyles(16, 26) : getCapsizeStyles(14, 20);
+    const styleProps = {
+      outline: '0',
+      display: 'block',
+      color: isActive ? color('accent') : isTopLevel ? color('text-title') : _color,
+      mb: isTopLevel ? space('base-loose') : mb,
+    };
     return (
       <SmartLink
         ref={ref}
-        css={css({
-          outline: '0',
-          display: 'block',
-          ...typeStyles,
-          color: isActive ? color('accent') : isTopLevel ? color('text-title') : _color,
-          mb: isTopLevel ? space('base-loose') : mb,
-          ':hover': {
-            color: isTopLevel ? color('accent') : color('text-title'),
-          },
-          textDecoration: 'none',
-          ':focus': {
-            color: color('accent'),
-          },
-        })}
+        {...styleProps}
+        _hover={{ color: isTopLevel ? color('accent') : color('text-title') }}
+        _focus={{ color: color('accent') }}
+        {...typeStyles}
         {...props}
       >
         {children}
@@ -86,12 +82,12 @@ const PageItem = React.forwardRef(
 
 const SectionTitle: React.FC<BoxProps> = ({ children, ...rest }) => (
   <Text
-    css={css({
+    {...{
       display: 'block',
       ...getCapsizeStyles(16, 26),
       color: color('text-title'),
       ...rest,
-    })}
+    }}
   >
     {children}
   </Text>
@@ -157,7 +153,7 @@ const ChildPages = ({ items, handleClick }: any) => {
 };
 
 const ChildSection: React.FC<BoxProps & { sections?: any }> = ({ sections, ...rest }) =>
-  sections.map((section, key) => {
+  sections?.map((section, key) => {
     return (
       <Box {...rest} key={key}>
         <SectionTitle

@@ -108,13 +108,7 @@ export const FeedbackSection: React.FC<BoxProps> = props => {
     >
       <Flex>
         <Box mt={space('extra-loose')} position="relative">
-          <Text
-            css={css({
-              ...getHeadingStyles('h5'),
-            })}
-          >
-            Was this page helpful?
-          </Text>
+          <Text {...getHeadingStyles('h5')}>Was this page helpful?</Text>
           <Stack isInline spacing={space('base-loose')} mt={space('base-loose')}>
             <Icon onClick={() => handleShow()} icon={SadIcon} />
             <Icon onClick={() => handleShow()} icon={NeutralIcon} />

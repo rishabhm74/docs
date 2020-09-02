@@ -61,12 +61,12 @@ export const Blockquote: React.FC<BoxProps> = React.memo(
         display="block"
         my={space('extra-loose')}
         className={className}
-        ref={ref}
+        ref={ref as any}
         {...rest}
       >
         <Box
           border="1px solid"
-          css={css({
+          {...{
             position: 'relative',
             display: 'grid',
             placeItems: 'center',
@@ -78,12 +78,16 @@ export const Blockquote: React.FC<BoxProps> = React.memo(
             boxShadow: isAlert ? 'mid' : 'unset',
             py: space('base'),
             px: space('base'),
-            '& p': {
-              flexGrow: 1,
-              pt: '4px',
-            },
-            ...styles,
-          })}
+          }}
+          css={theme =>
+            css({
+              '& p': {
+                flexGrow: 1,
+                pt: '4px',
+              },
+            })(theme)
+          }
+          {...styles}
         >
           {Icon && (
             <Flex align="center" height="28x" flexShrink={0} color={accent} width="22px">

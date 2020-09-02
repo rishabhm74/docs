@@ -58,10 +58,10 @@ const Card = ({ route, styles, ...rest }) => {
       >
         <Box as="span" display="block" bg={color('bg-light')} p={space('base')}>
           <Text
-            css={css({
+            {...{
               ...getHeadingStyles('h5'),
               display: 'block',
-            })}
+            }}
           >
             {description}
           </Text>
@@ -120,18 +120,15 @@ export const LinkWithHover = forwardRef(
   }
 );
 
-export const Link = forwardRefWithAs<
-  { href?: string; target?: string; rel?: string } & BoxProps,
-  'a'
->((props, ref: Ref<HTMLDivElement>) => {
+export const Link = forwardRefWithAs<BoxProps, 'a'>((props, ref) => {
   return (
     <Box
       as={props.href ? 'a' : 'span'}
       ref={ref}
       color="var(--colors-accent)"
       cursor="pointer"
-      textDecoration="underline"
-      _hover={{ textDecoration: 'none' }}
+      textDecoration="none"
+      _hover={{ textDecoration: 'underline' }}
       _focus={{ boxShadow: 'outline' }}
       rel="nofollow noopener noreferrer"
       {...props}

@@ -8,7 +8,9 @@ const GlobalStyles = (
       :root {
         --reach-tooltip: 1;
       }
-
+      a {
+        text-decoration: none;
+      }
       * {
         font-feature-settings: 'onum' 1, 'pnum' 1, 'kern' 1, 'ss01' 1;
       }

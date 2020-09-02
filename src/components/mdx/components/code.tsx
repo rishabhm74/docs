@@ -66,47 +66,51 @@ export const Code: React.FC<
         >
           <Box
             as="code"
-            css={css({
+            {...{
               width: '100%',
               display: 'flex',
               flexDirection: 'column',
               minWidth: 'fit-content',
-              '.token-line': {
-                display: 'inline-block',
-                ...generateCssStylesForHighlightedLines(numbers),
-              },
               counterReset: 'line',
-              '& .token-line': {
-                '&__empty': {
-                  height: '24px',
-                },
-                '.comment': {
-                  color: 'rgba(255,255,255,0.5) !important',
-                },
-                display: 'flex',
-                fontSize: '14px',
-                '&::before':
-                  lines > LINE_MINIMUM && lang !== 'bash'
-                    ? {
-                        counterIncrement: 'line',
-                        content: 'counter(line, decimal-leading-zero)',
-                        display: 'grid',
-                        placeItems: 'center',
-                        color: themeColor('ink.400'),
-                        mr: '16px',
-                        width: '42px',
-                        fontSize: '12px',
-                        transform: 'translateY(1px)',
-                        borderRight: '1px solid rgb(39,41,46)',
-                      }
-                    : {},
-              },
               pr: space(['base-loose', 'base-loose', 'extra-loose', 'extra-loose']),
               pl:
                 lines <= LINE_MINIMUM || lang === 'bash'
                   ? space(['extra-loose', 'extra-loose', 'base-loose', 'base-loose'])
                   : 'unset',
-            })}
+            }}
+            css={theme =>
+              css({
+                '.token-line': {
+                  display: 'inline-block',
+                  ...generateCssStylesForHighlightedLines(numbers),
+                },
+                '& .token-line': {
+                  '&__empty': {
+                    height: '24px',
+                  },
+                  '.comment': {
+                    color: 'rgba(255,255,255,0.5) !important',
+                  },
+                  display: 'flex',
+                  fontSize: '14px',
+                  '&::before':
+                    lines > LINE_MINIMUM && lang !== 'bash'
+                      ? {
+                          counterIncrement: 'line',
+                          content: 'counter(line, decimal-leading-zero)',
+                          display: 'grid',
+                          placeItems: 'center',
+                          color: themeColor('ink.400'),
+                          mr: '16px',
+                          width: '42px',
+                          fontSize: '12px',
+                          transform: 'translateY(1px)',
+                          borderRight: '1px solid rgb(39,41,46)',
+                        }
+                      : {},
+                },
+              })(theme)
+            }
             {...rest}
           >
             <Box height="16px" width="100%" />
@@ -188,14 +192,12 @@ const preProps = {
 export const InlineCode: React.FC<BoxProps> = ({ children, ...rest }) => (
   <Text
     as="code"
-    css={css({
-      // @ts-ignore
+    {...preProps}
+    {...{
       fontSize: '14px',
-      // @ts-ignore
       lineHeight: '20px',
-      ...preProps,
-      ...rest,
-    })}
+    }}
+    {...rest}
   >
     {children}
   </Text>

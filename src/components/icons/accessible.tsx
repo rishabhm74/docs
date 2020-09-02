@@ -1,8 +1,7 @@
 import React from 'react';
 import { Box, BoxProps } from '@stacks/ui';
-import { SVGProps } from 'react';
 
-export const AccessibleIcon: React.FC<BoxProps & SVGProps<any>> = props => (
+export const AccessibleIcon: React.FC<BoxProps> = props => (
   <Box
     as="svg"
     width="44"

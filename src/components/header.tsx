@@ -16,7 +16,7 @@ import MenuIcon from 'mdi-react/MenuIcon';
 import CloseIcon from 'mdi-react/CloseIcon';
 import { useMobileMenuState } from '@common/hooks/use-mobile-menu';
 
-import { css } from '@stacks/ui-core';
+import { css, ForwardRefExoticComponentWithAs, forwardRefWithAs } from '@stacks/ui-core';
 import NextLink from 'next/link';
 import { ColorModeButton } from '@components/color-mode-button';
 import { PAGE_WIDTH } from '@common/constants';
@@ -41,7 +41,7 @@ const MenuButton = ({ ...rest }: any) => {
   );
 };
 
-const HeaderWrapper: React.FC<BoxProps> = React.forwardRef((props, ref) => (
+const HeaderWrapper: React.FC<BoxProps> = React.forwardRef((props, ref: any) => (
   <Box as="header" ref={ref} width="100%" position="relative" zIndex={9999} {...props} />
 ));
 
@@ -88,27 +88,30 @@ const nav: NavItem[] = [
 
 export const HEADER_HEIGHT = 132;
 
-const HeaderTextItem: React.FC<BoxProps & LinkProps> = ({ children, href, as, ...rest }) => (
+const HeaderTextItem: ForwardRefExoticComponentWithAs<BoxProps & LinkProps, 'a'> = forwardRefWithAs<
+  BoxProps & LinkProps,
+  'a'
+>(({ children, href, as = 'a', ...rest }, ref) => (
   <Text
     color={color('invert')}
-    css={css({
+    {...{
       ...getCapsizeStyles(16, 26),
       color: 'currentColor',
       ...rest,
       fontWeight: '400',
-      ':hover': {
+      _hover: {
         cursor: 'pointer',
         textDecoration: href ? 'underline' : 'none',
         color: href ? color('accent') : 'currentColor',
       },
-    })}
+    }}
     as={as}
-    // @ts-ignore
     href={href}
+    ref={ref}
   >
     {children}
   </Text>
-);
+));
 
 const NavItem: React.FC<FlexProps & { item: NavItem }> = ({ item, ...props }) => {
   const { hover, active, bind } = useTouchable({

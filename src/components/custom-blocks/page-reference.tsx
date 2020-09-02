@@ -43,12 +43,7 @@ const Image = ({
 );
 
 const Title = ({ children, ...props }: BoxProps) => (
-  <Text
-    css={css({
-      ...getHeadingStyles('h3'),
-    })}
-    {...props}
-  >
+  <Text {...getHeadingStyles('h3')} {...props}>
     {children}
   </Text>
 );
@@ -56,11 +51,9 @@ const Title = ({ children, ...props }: BoxProps) => (
 const Description = ({ children, ...props }) => (
   <Text
     {...props}
-    css={css({
-      ...getCapsizeStyles(16, 26),
-      mt: space('base-tight'),
-      color: color('text-body'),
-    })}
+    {...getCapsizeStyles(16, 26)}
+    mt={space('base-tight')}
+    color={color('text-body')}
   >
     {children}
   </Text>

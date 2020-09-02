@@ -25,7 +25,7 @@ const FAQItem = React.memo(({ faq, ...rest }: any) => {
         <Flex
           as={AccordionButton}
           _hover={{ color: color('accent') }}
-          css={css({
+          {...{
             display: 'flex',
             width: '100%',
             outline: 'none',
@@ -34,10 +34,10 @@ const FAQItem = React.memo(({ faq, ...rest }: any) => {
             py: space('extra-loose'),
             textAlign: 'left',
             color: isActive ? color('accent') : color('text-title'),
-            ':hover': {
+            _hover: {
               color: color('accent'),
             },
-          })}
+          }}
         >
           <Components.h4 my="0px !important" id={id} color="currentColor">
             {faq.title}
