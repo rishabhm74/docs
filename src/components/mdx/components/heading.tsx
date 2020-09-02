@@ -65,7 +65,7 @@ const Hashtag = () => (
   <Flex
     position="absolute"
     as="span"
-    align="center"
+    alignItems="center"
     size="20px"
     left={['12px', '12px', '-20px', '-20px']}
     color={color('text-caption')}

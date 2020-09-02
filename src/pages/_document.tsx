@@ -11,7 +11,7 @@ import Document, {
 import { THEME_STORAGE_KEY } from '@common/constants';
 import { extractCritical } from '@emotion/server';
 import { MdxOverrides } from '@components/mdx/overrides';
-import { ColorModes } from '@components/color-modes/styles';
+import { ColorModes, DarkMode, LightMode } from '@components/color-modes/styles';
 import { ProgressBarStyles } from '@components/progress-bar';
 
 export default class MyDocument extends Document<DocumentProps> {
@@ -26,6 +26,16 @@ export default class MyDocument extends Document<DocumentProps> {
           {ProgressBarStyles}
           {ColorModes}
           <style
+            data-emotion-css={'css-global ' + DarkMode.props.styles.name}
+            dangerouslySetInnerHTML={{ __html: DarkMode.props.styles.styles }}
+            media="(prefers-color-scheme: dark)"
+          />
+          <style
+            data-emotion-css={'css-global ' + LightMode.props.styles.name}
+            dangerouslySetInnerHTML={{ __html: LightMode.props.styles.styles }}
+            media="(prefers-color-scheme: light)"
+          />
+          <style
             data-emotion-css={styles.ids.join(' ')}
             dangerouslySetInnerHTML={{ __html: styles.css }}
           />
@@ -38,6 +48,7 @@ export default class MyDocument extends Document<DocumentProps> {
     return (
       <Html lang="en">
         <Head>
+          <meta name="color-scheme" content="light dark" />
           <link
             rel="preload"
             href="/static/fonts/soehne-mono-web-buch.woff2"
@@ -108,15 +119,15 @@ export default class MyDocument extends Document<DocumentProps> {
           <script
             dangerouslySetInnerHTML={{
               __html: `(function() {
-                try {
-                  var mode = localStorage.getItem('${THEME_STORAGE_KEY}')
-                  if (!mode) return
-                  document.documentElement.classList.add(mode)
-                  var bgValue = getComputedStyle(document.documentElement)
-                    .getPropertyValue('--colors-bg')
-                  document.documentElement.style.background = bgValue
-                } catch (e) {}
-              })()`,
+try {
+    var mode = localStorage.getItem('${THEME_STORAGE_KEY}')
+    if (!mode) return
+    document.documentElement.classList.add(mode)
+    var bgValue = getComputedStyle(document.documentElement)
+    .getPropertyValue('--colors-bg')
+    document.documentElement.style.background = bgValue
+} catch (e) {}
+})()`,
             }}
           />
           <link rel="preconnect" href="https://bh4d9od16a-dsn.algolia.net" crossOrigin="true" />

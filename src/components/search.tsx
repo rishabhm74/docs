@@ -148,13 +148,13 @@ export const SearchBox: React.FC<BoxProps> = React.memo(props => {
         }}
         {...props}
       >
-        <Flex align="center" justifyContent="space-between">
+        <Flex alignItems="center" justifyContent="space-between">
           <Flex
             ref={searchButtonRef}
             onClick={onOpen}
             px={space('base-tight')}
             py={space('tight')}
-            align="center"
+            alignItems="center"
             _hover={{ borderColor: themeColor('blue.400') }}
           >
             <Box

@@ -49,7 +49,7 @@ const FeedbackCard = ({ show, onClose }) => {
             p={space('base')}
             border={border()}
             borderRadius="12px"
-            align="center"
+            alignItems="center"
             justifyContent="center"
             bg={color('bg')}
             size="100%"
@@ -120,7 +120,7 @@ export const FeedbackSection: React.FC<BoxProps> = props => {
       <Flex
         flexDirection="column"
         justifyContent="flex-end"
-        align="flex-end"
+        alignItems="flex-end"
         mt={space(['extra-loose', 'extra-loose', 'base-loose'])}
       >
         <Link

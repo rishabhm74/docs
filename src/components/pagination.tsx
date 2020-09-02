@@ -108,7 +108,7 @@ const PrevCard: React.FC<any> = React.memo(props => {
       {({ hover, active }) => (
         <>
           <FloatingLink href={prev.path} />
-          <Flex position="relative" mb={space('base-tight')} align="center">
+          <Flex position="relative" mb={space('base-tight')} alignItems="center">
             <Pretitle
               left={hover || active ? '18px' : 0}
               bg={color('bg')}
@@ -133,11 +133,11 @@ const NextCard: React.FC<any> = React.memo(props => {
   const { next } = usePaginateRoutes();
 
   return next ? (
-    <Card py="loose" textAlign="right" align="flex-end">
+    <Card py="loose" textAlign="right" alignItems="flex-end">
       {({ hover, active }) => (
         <>
           <FloatingLink href={next.path} />
-          <Flex position="relative" mb={space('base-tight')} align="center">
+          <Flex position="relative" mb={space('base-tight')} alignItems="center">
             <Pretitle
               right={hover || active ? '18px' : 0}
               bg={color('bg')}

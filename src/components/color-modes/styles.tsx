@@ -55,14 +55,30 @@ import { theme, generateCssVariables } from '@stacks/ui';
 //
 // export const ColorModes = <Global styles={colorModeStyles} />;
 
-export const ColorModes = (
+export const LightMode = (
   <Global
     styles={css`
       :root {
         ${generateCssVariables('light')({ colorMode: 'light', theme })};
         --colors-highlight-line-bg: rgba(255, 255, 255, 0.08);
       }
+    `}
+  />
+);
 
+export const DarkMode = (
+  <Global
+    styles={css`
+      :root {
+        ${generateCssVariables('dark')({ colorMode: 'dark', theme })};
+        --colors-highlight-line-bg: rgba(255, 255, 255, 0.05);
+      }
+    `}
+  />
+);
+export const ColorModes = (
+  <Global
+    styles={css`
       * {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;

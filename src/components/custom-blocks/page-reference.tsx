@@ -87,7 +87,7 @@ const InlineCard = ({ page }) => {
       flexDirection={['column', 'row', 'row', 'row']}
       p={space('base-loose')}
       borderRadius="12px"
-      align="center"
+      alignItems="center"
       transition={transition()}
       boxShadow={hover ? 'mid' : 'none'}
       position="relative"
@@ -119,7 +119,7 @@ const InlineCard = ({ page }) => {
         mt={space(['base', 'none', 'none', 'none'])}
         textAlign={['center', 'left', 'left', 'left']}
       >
-        <Flex align="baseline">
+        <Flex alignItems="baseline">
           <Title
             width={['100%', 'unset', 'unset', 'unset']}
             color={hover ? color('accent') : color('text-title')}
@@ -139,7 +139,7 @@ const InlineCard = ({ page }) => {
                   borderRadius="18px"
                   px={space('base-tight')}
                   height="20px"
-                  align="center"
+                  alignItems="center"
                   justify="center"
                   fontSize="12px"
                   bg={color('border')}

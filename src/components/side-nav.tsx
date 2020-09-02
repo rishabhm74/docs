@@ -177,7 +177,7 @@ const BackItem = props => (
       cursor: 'pointer',
       color: color('text-title'),
     }}
-    align="center"
+    alignItems="center"
     {...props}
   >
     <Box mr={space('extra-tight')}>
@@ -286,7 +286,7 @@ const Navigation = () => {
       return (
         <Box mb="40px" key={i}>
           {section.title ? (
-            <Flex width="100%" align="center" mb={space('loose')}>
+            <Flex width="100%" alignItems="center" mb={space('loose')}>
               <SectionTitle>{section.title}</SectionTitle>
             </Flex>
           ) : null}

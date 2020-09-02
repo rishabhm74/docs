@@ -21,7 +21,7 @@ export const BackButton = ({ href, ...rest }) => (
         cursor: 'pointer',
         color: color('text-title'),
       }}
-      align="center"
+      alignItems="center"
       as={href ? 'a' : 'div'}
       display="flex !important"
       {...rest}

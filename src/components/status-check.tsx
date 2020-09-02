@@ -69,7 +69,7 @@ export const StatusCheck: React.FC<LinkProps> = props => {
       transition={transition()}
       {...props}
     >
-      <Flex align="center">
+      <Flex alignItems="center">
         <Box mr={space('tight')}>
           {!data && !error ? (
             <Box

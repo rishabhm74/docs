@@ -203,29 +203,21 @@ const Navigation: React.FC<BoxProps> = props => {
 
 const LogoLink = () => {
   const { hover, active, bind } = useTouchable();
-  const router = useRouter();
   return (
     <NextLink href="/" passHref>
-      <Link
-        as="a"
-        style={{
-          textDecoration: 'none',
-          pointerEvents: router.pathname === '/' ? 'none' : 'unset',
-        }}
-        {...bind}
-      >
-        <Flex as="span" align="center">
+      <Link _hover={{ textDecoration: 'none' }} as="a" display="flex" {...bind}>
+        <Flex as="span" alignItems="center">
           <Box
             as="span"
-            // opacity={hover || active ? 0.75 : 1}
-            color={hover || active ? color('accent') : color('invert')}
+            opacity={hover || active ? 0.75 : 1}
+            color={color('invert')}
             mr={space('tight')}
           >
             <BlockstackIcon size="20px" />
           </Box>
-          <Box as="span" transform="translateY(1px)">
-            <HeaderTextItem>Blockstack</HeaderTextItem>
-          </Box>
+          <HeaderTextItem as="span" transform="translateY(1px)">
+            Blockstack
+          </HeaderTextItem>
         </Flex>
       </Link>
     </NextLink>
@@ -239,7 +231,7 @@ const Header = ({ hideSubBar, ...rest }: any) => {
         <Box mx="auto" px="extra-loose">
           <Flex
             justifyContent="space-between"
-            align="center"
+            alignItems="center"
             bg={color('bg')}
             style={{
               backdropFilter: 'blur(5px)',
@@ -251,7 +243,7 @@ const Header = ({ hideSubBar, ...rest }: any) => {
             {...rest}
           >
             <LogoLink />
-            <Flex align="center">
+            <Flex alignItems="center">
               <Navigation />
               <ColorModeButton />
               <MenuButton />

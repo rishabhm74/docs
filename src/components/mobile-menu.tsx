@@ -68,7 +68,7 @@ export const MobileMenu: React.FC<FlexProps> = props => {
                   borderLeft={border()}
                 >
                   <Flex
-                    align="center"
+                    alignItems="center"
                     justifyContent="flex-end"
                     height="72px"
                     px={space(['extra-loose', 'extra-loose', 'base', 'base'])}

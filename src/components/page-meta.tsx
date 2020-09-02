@@ -9,7 +9,7 @@ import { getCapsizeStyles } from '@components/mdx/typography';
 const Experience: React.FC<
   FlexProps & { level?: 'beginner' | 'intermediate' | 'advanced'; small?: boolean }
 > = ({ level, small, ...rest }) => (
-  <Flex align="center" {...rest}>
+  <Flex alignItems="center" {...rest}>
     <Box mr={space('extra-tight')} color={color('text-caption')}>
       <ToolsIcon size={small ? '16px' : '20px'} />
     </Box>
@@ -23,7 +23,7 @@ const Duration: React.FC<FlexProps & { value?: string; small?: boolean }> = ({
   small,
   ...rest
 }) => (
-  <Flex align="center" {...rest}>
+  <Flex alignItems="center" {...rest}>
     <Box mr={space('extra-tight')} color={color('text-caption')}>
       <ClockIcon size={small ? '16px' : '20px'} />
     </Box>

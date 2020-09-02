@@ -17,7 +17,7 @@ export const CircleIcon: React.FC<
 > = ({ size = '72px', icon: Icon, hover, dark, ...rest }) => (
   <Flex
     size={size}
-    align="center"
+    alignItems="center"
     justify="center"
     borderRadius={size}
     bg={color(hover ? 'accent' : 'bg-alt')}
